@@ -1,0 +1,76 @@
+.container {
+    margin-top: 100px;
+}
+
+.login-form {
+  width: fit-content;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #e0e0e0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-form input[type='text'],
+.login-form input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eeeeee;
+  box-shadow: inset 3px 3px 5px #cbced1, inset -3px -3px 5px #ffffff;
+  font-size: 16px;
+}
+
+.login-form input[type='password'] {
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 0.5);
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-form button:hover {
+  background-color: #d4d4d4;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-form {
+    padding: 20px;
+  }
+
+  .login-form h2 {
+    font-size: 20px;
+  }
+
+  .login-form input[type='text'],
+  .login-form input[type='password'] {
+    font-size: 14px;
+  }
+
+  .login-form button {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+}
