@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Login.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,8 +20,10 @@ const Login = ({ onLogin }) => {
     const loginData = { username, password };
     // Store the login data in local storage
     localStorage.setItem('loginData', JSON.stringify(loginData));
-    // Call the onLogin function to pass the login data to the parent component
     onLogin(loginData);
+
+    // Redirect to the information page
+    navigate('/info');
   };
 
   const handleUsernameChange = (event) => {
@@ -31,6 +35,8 @@ const Login = ({ onLogin }) => {
     setPassword(event.target.value);
     setError('');
   };
+
+  const isSubmitDisabled = !username || !password;
 
   return (
     <div className="container">
@@ -54,7 +60,9 @@ const Login = ({ onLogin }) => {
             required
           />
           {error && <p className="error-message">{error}</p>}
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={isSubmitDisabled}>
+            Submit
+          </button>
         </form>
       </div>
     </div>
